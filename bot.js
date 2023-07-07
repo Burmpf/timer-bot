@@ -26,6 +26,6 @@ client.once('ready', async () => {
     channel.send('React to this message to set a reminder for 3 days later.').catch(console.error);
 });
 
-client.login('MTEyNjk3OTY2NTUzODU4ODc0Mg.GtWUz2.IBH1eMJpMWQxDq2KT-KvMm5cmpaEiHUs85L8Fw');
+client.login('ENV.DISCORD_BOT_TOKEN');
 
 
