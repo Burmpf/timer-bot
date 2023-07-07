@@ -4,10 +4,6 @@ const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD
 const millisecondsInThreeDays = 3 * 24 * 60 * 60 * 1000;
 const channelId = '1126987843940663336';
 
-
-console.log(process.env.TOKEN);
-
-
 client.on('messageReactionAdd', async (reaction, user) => {
     if (!user.bot) {
         let targetUser = await client.users.fetch(user.id);
