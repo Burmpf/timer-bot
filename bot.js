@@ -1,8 +1,12 @@
+require('dotenv').config();
 const Discord = require('discord.js');
-const { Client, Intents } = require('discord.js');
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS", "DIRECT_MESSAGES"] });
 const millisecondsInThreeDays = 3 * 24 * 60 * 60 * 1000;
-const channelId = '1126987843940663336'; // Replace with your channel ID
+const channelId = '1126987843940663336';
+
+
+console.log(process.env.TOKEN);
+
 
 client.on('messageReactionAdd', async (reaction, user) => {
     if (!user.bot) {
@@ -26,6 +30,4 @@ client.once('ready', async () => {
     channel.send('React to this message to set a reminder for 3 days later.').catch(console.error);
 });
 
-client.login('ENV.DISCORD_BOT_TOKEN');
-
-
+client.login(process.env.TOKEN);
